@@ -1,0 +1,27 @@
+{
+  "name": "json-html-table",
+  "version": "1.0.0",
+  "description": "This module is used to convert a JSON object into an HTML table.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SETHACKED-LLC/json-html-table.git"
+  },
+  "keywords": [
+    "json",
+    "html",
+    "table"
+  ],
+  "author": "Jason Clay",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SETHACKED-LLC/json-html-table/issues"
+  },
+  "homepage": "https://github.com/SETHACKED-LLC/json-html-table#readme",
+  "devDependencies": {
+    "jest": "^29.6.4"
+  }
+}
