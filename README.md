@@ -41,7 +41,7 @@ The function will convert the JSON object to an HTML table. For the above usage 
 To convert an object to an HTML table:
 
 ```js
-const jht = require(''json-html-table'');
+const jht = require('json-html-table');
 const result = jht({name: 'John', age: 25, country: 'USA'}, ['name', 'country']);
 console.log(result);
 ```
