@@ -12,7 +12,7 @@ You can also include it in your `package.json` file:
 
 ```javascript
 "dependencies": {
-    "json-html-table": "1.0.0"
+    "json-html-table": "2.0.1"
 }
 ```
 
@@ -36,8 +36,8 @@ let jsonArray = [{
 }];
 
 let keys = ['name', 'country'];
-
-console.log(jht(jsonArray, keys));
+let table = jht(jsonArray, keys);
+console.log(table);
 ```
 
 This will print:
