@@ -1,55 +1,58 @@
-# json-html-table
+# JSON to HTML Table Converter
 
-This is a simple NPM module that converts a JSON object into an HTML table. It takes in a JSON object and an array of keys which are whitelisted into the table. If the keys are not found in the JSON object, they will be ignored.
+This Node.js module converts an array of JSON objects into an HTML table. The table includes only the keys specified in the whitelist. If a key in the whitelist doesn't exist in a certain JSON object, an empty cell will be added to the corresponding spot in the table.
 
 ## Installation
 
-```sh
-npm i json-html-table --save
+```bash
+npm install json-html-table
 ```
+
+You can also include it in your `package.json` file:
+
+```javascript
+"dependencies": {
+    "json-html-table": "1.0.0"
+}
+```
+
+Then run `npm install`.
 
 ## Usage
 
-Import the module in your file:
+Here is an example of how to use this module:
 
-```js
+```javascript
 const jht = require('json-html-table');
+
+let jsonArray = [{
+    name: 'John',
+    age: 25,
+    country: 'USA'
+}, {
+    name: 'Doe',
+    age: 30,
+    country: 'UK'
+}];
+
+let keys = ['name', 'country'];
+
+console.log(jht(jsonArray, keys));
 ```
 
-Call the function with a JSON object and an array of keys:
-
-```js
-const json = {name: 'John', age: 25, country: 'USA'}; 
-const keys = ['name', 'country']; 
-const table = jht(json, keys);
-console.log(table);
-```
-
-## Output
-
-The function will convert the JSON object to an HTML table. For the above usage example, it should output:
+This will print:
 
 ```html
 <table>
 <tr><th>name</th><th>country</th></tr>
 <tr><td>John</td><td>USA</td></tr>
+<tr><td>Doe</td><td>UK</td></tr>
 </table>
 ```
+## Testing
 
-## Example
+Unit tests for this module can be run with:
 
-To convert an object to an HTML table:
-
-```js
-const jht = require('json-html-table');
-const result = jht({name: 'John', age: 25, country: 'USA'}, ['name', 'country']);
-console.log(result);
+```bash
+npm run test
 ```
-
-## Error Handling
-
-If either the JSON object or keys array is not provided or either is empty, the function will throw an error.
-
-## License
-
-GNU GPLv3
